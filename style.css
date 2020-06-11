@@ -37,18 +37,20 @@ h1 {
     padding: 15px;
     border-radius: 5px;
     border: 1px solid var(--tertiary-color);
+    font-size: 1em;
 }
 
 .filter:focus {
     outline: 0;
 }
 
-.post-container {
+.posts-container {
     width: 90vw;
     max-width: 800px;
+    padding-bottom: 100px;
 }
 
-.post-container .post {
+.posts-container .post {
     position: relative;
     padding: 20px;
     margin-top: 40px;
