@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #F27127;
+    --secondary-color: #F28A2E;
+    --tertiary-color: #0D0D0D;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    background-color: var(--primary-color);
+}
+
+h1 {
+    padding: 20px;
+    color: var(--tertiary-color);
+}
+
+.filter-container {
+    width: 90vw;
+    max-width: 800px;
+}
+
+.filter {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--tertiary-color);
+}
+
+.filter:focus {
+    outline: 0;
+}
+
+.post-container {
+    width: 90vw;
+    max-width: 800px;
+}
+
+.post-container .post {
+    position: relative;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+}
+
+.post .number {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.post .post-info {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.post-info .post-title {
+    padding-bottom: 15px;
+}
+
+.post-info .post-body {
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.loader {
+    opacity: 0;
+    display: flex;
+    position: fixed;
+    bottom: 50px;
+}
+
+.loader.show {
+    opacity: 1;
+}
+
+.circle {
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.circle:nth-of-type(2) {
+    animation-delay: 1s;
+}
+
+.circle:nth-of-type(3) {
+    animation-delay: 2s;
+}
+
+.circle:nth-of-type(3)::after {
+    content: "";
+    display: block;
+    background-color: var(--primary-color);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: show 2s linear infinite;
+    animation-timing-function: steps(1, start);
+}
+
+@keyframes show {
+    0% {
+        transform: translateX(0%);
+    }
+
+    25% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(33%);
+    }
+
+    75% {
+        transform: translateX(66%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+
+}
